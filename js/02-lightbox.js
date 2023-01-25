@@ -21,3 +21,16 @@ const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     scrollZoom: false,
 })
+
+ulEl.addEventListener('mouseover', () => {
+    if (event.target.nodeName !== "IMG") {
+        return
+    }
+    event.target.style.transform = "scale(1.03)"
+    event.target.style.transition = "200ms"
+
+})
+ulEl.addEventListener('mouseout', () => {
+    event.target.style.transform = "scale(1.00)"
+    event.target.style.transition = "200ms"
+})
